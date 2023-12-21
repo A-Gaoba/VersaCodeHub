@@ -1,0 +1,36 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+  int unitsConsumed;
+  float pricePerUnit;
+  float totalPrice;
+
+  cout << "Enter the number of units consumed: ";
+  cin >> unitsConsumed;
+
+  if (unitsConsumed < 30)
+  {
+    pricePerUnit = 280;
+  }
+  else if (unitsConsumed >= 30 && unitsConsumed < 50)
+  {
+    pricePerUnit = 200;
+  }
+  else if (unitsConsumed >= 50 && unitsConsumed < 100)
+  {
+    pricePerUnit = 150;
+  }
+  else
+  {
+    pricePerUnit = 100;
+  }
+
+  totalPrice = unitsConsumed * pricePerUnit;
+
+  cout << "The total price is: " << totalPrice << endl;
+
+  return 0;
+}

@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/Github/lab3",
-      "program": "d:/Github/lab3/build/Debug/outDebug",
+      "cwd": "d:/Github/sharaf",
+      "program": "d:/Github/sharaf/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
