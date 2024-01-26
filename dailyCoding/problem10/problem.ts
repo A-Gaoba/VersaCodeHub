@@ -17,7 +17,6 @@ const myFunction = () => {
 };
 
 try {
-  // Schedule the job to run myFunction after 2000 milliseconds (2 seconds)
   JobScheduler.scheduleJob(myFunction, 2000);
 } catch (error) {
   console.error(error.message);
