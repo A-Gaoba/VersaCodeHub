@@ -11,7 +11,6 @@ class JobScheduler {
   }
 }
 
-// Example usage:
 const myFunction = () => {
   console.log("Job executed!");
 };
