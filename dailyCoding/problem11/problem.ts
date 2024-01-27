@@ -1,15 +1,10 @@
-// This problem was asked by Twitter.
-// Implement an autocomplete system. That is, given a query string s and a set of all possible query strings, return all strings in the set that have s as a prefix.
-// For example, given the query string de and the set of strings [dog, deer, deal], return [deer, deal].
-// Hint: Try preprocessing the dictionary into a more efficient data structure to speed up queries.
-
 class TrieNode {
   children: Map<string, TrieNode>;
   isEndOfWord: boolean;
 
   constructor() {
-    this.children = new Map();
-    this.isEndOfWord = false;
+      this.children = new Map();
+      this.isEndOfWord = false;
   }
 }
 
@@ -17,55 +12,65 @@ class Trie {
   root: TrieNode;
 
   constructor() {
-    this.root = new TrieNode();
+      this.root = new TrieNode();
   }
 
   insert(word: string): void {
-    let node = this.root;
-    for (const char of word) {
-      if (!node.children.has(char)) {
-        node.children.set(char, new TrieNode());
+      let node = this.root;
+
+      for (const char of word) {
+          if (!node.children.has(char)) {
+              node.children.set(char, new TrieNode());
+          }
+          node = node.children.get(char)!;
       }
-      node = node.children.get(char)!;
-    }
-    node.isEndOfWord = true;
+
+      node.isEndOfWord = true;
   }
 
-  search(prefix: string): string[] {
-    let node = this.root;
-    for (const char of prefix) {
-      if (!node.children.has(char)) {
-        return [];
+  searchPrefix(prefix: string): string[] {
+      let node = this.root;
+      const result: string[] = [];
+
+      for (const char of prefix) {
+          if (node.children.has(char)) {
+              node = node.children.get(char)!;
+          } else {
+              return result;
+          }
       }
-      node = node.children.get(char)!;
-    }
-    return this.getAllWords(node, prefix);
+
+      this.collectWords(node, prefix, result);
+
+      return result;
   }
 
-  private getAllWords(node: TrieNode, currentWord: string): string[] {
-    const result: string[] = [];
-    if (node.isEndOfWord) {
-      result.push(currentWord);
-    }
+  collectWords(node: TrieNode, prefix: string, result: string[]): void {
+      if (node.isEndOfWord) {
+          result.push(prefix);
+      }
 
-    for (const [char, childNode] of node.children.entries()) {
-      result.push(...this.getAllWords(childNode, currentWord + char));
-    }
-
-    return result;
+      for (const [char, child] of node.children) {
+          this.collectWords(child, prefix + char, result);
+      }
   }
 }
 
 function autocomplete(query: string, words: string[]): string[] {
   const trie = new Trie();
+
+  // Preprocess the dictionary into the Trie data structure
   for (const word of words) {
-    trie.insert(word);
+      trie.insert(word);
   }
-  return trie.search(query);
+
+  // Search for words with the given query prefix in the Trie
+  return trie.searchPrefix(query);
 }
 
-// Example usage:
+// Example usage
 const query = "de";
-const wordSet = ["dog", "deer", "deal"];
-const autocompleteResults = autocomplete(query, wordSet);
-console.log(autocompleteResults);
+const dictionary = ["dog", "deer", "deal"];
+const autocompleteResults = autocomplete(query, dictionary);
+
+console.log(autocompleteResults); // Output: ["deer", "deal"]
