@@ -5,14 +5,14 @@ function longestSubstringWithKDistinctChars(s, k) {
     if (k <= 0) {
         return 0;
     }
-    var maxLength = 0;
-    var charFrequency = {};
-    var leftPointer = 0;
-    for (var rightPointer = 0; rightPointer < s.length; rightPointer++) {
-        var currentChar = s[rightPointer];
+    let maxLength = 0;
+    let charFrequency = {};
+    let leftPointer = 0;
+    for (let rightPointer = 0; rightPointer < s.length; rightPointer++) {
+        let currentChar = s[rightPointer];
         charFrequency[currentChar] = (charFrequency[currentChar] || 0) + 1;
         while (Object.keys(charFrequency).length > k) {
-            var leftChar = s[leftPointer];
+            let leftChar = s[leftPointer];
             charFrequency[leftChar]--;
             if (charFrequency[leftChar] === 0) {
                 delete charFrequency[leftChar];
@@ -23,7 +23,7 @@ function longestSubstringWithKDistinctChars(s, k) {
     }
     return maxLength;
 }
-var s = "abcba";
-var k = 2;
-var result = longestSubstringWithKDistinctChars(s, k);
+let s = "abcba";
+let k = 2;
+let result = longestSubstringWithKDistinctChars(s, k);
 console.log(result); // Output: 3 (length of "bcb")
