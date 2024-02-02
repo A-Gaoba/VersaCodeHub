@@ -23,7 +23,6 @@ function longestSubstringWithKDistinctChars(s, k) {
     }
     return maxLength;
 }
-// Example usage:
 var s = "abcba";
 var k = 2;
 var result = longestSubstringWithKDistinctChars(s, k);

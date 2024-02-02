@@ -33,7 +33,6 @@ function longestSubstringWithKDistinctChars(s: string, k: number): number {
   return maxLength;
 }
 
-// Example usage:
 const s = "abcba";
 const k = 2;
 const result = longestSubstringWithKDistinctChars(s, k);
