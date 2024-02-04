@@ -6,10 +6,9 @@ function estimatePi(numPoints: number): number {
   let pointsInsideCircle = 0;
 
   for (let i = 0; i < numPoints; i++) {
-    const x = Math.random(); // Random x-coordinate between 0 and 1
-    const y = Math.random(); // Random y-coordinate between 0 and 1
+    const x = Math.random(); 
+    const y = Math.random(); 
 
-    // Check if the point is inside the quarter circle
     if (x * x + y * y <= 1) {
       pointsInsideCircle++;
     }
