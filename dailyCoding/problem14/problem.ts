@@ -15,13 +15,11 @@ function estimatePi(numPoints: number): number {
     }
   }
 
-  // Estimate π using the ratio of points inside the circle to total points
   const piEstimation = (4 * pointsInsideCircle) / numPoints;
 
   return piEstimation;
 }
 
-// Example: Estimate π using 100,000 random points
 const numPoints = 100000;
 const piValue = estimatePi(numPoints);
 
