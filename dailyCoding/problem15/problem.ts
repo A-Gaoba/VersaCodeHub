@@ -14,7 +14,6 @@ class RandomPicker<T> {
       return;
     }
 
-    // For subsequent elements, select with decreasing probability
     const probability = 1 / this.count;
     const randomValue = Math.random();
 
@@ -28,7 +27,6 @@ class RandomPicker<T> {
   }
 }
 
-// Example usage:
 const stream = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 const picker = new RandomPicker<number>();
