@@ -3,7 +3,6 @@
 // answer[j] % answer[i] == 0
 // If there are multiple solutions, return any of them.
 
-
 // Example 1:
 // Input: nums = [1,2,3]
 // Output: [1,2]
