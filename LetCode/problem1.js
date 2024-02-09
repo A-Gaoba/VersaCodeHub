@@ -13,7 +13,7 @@
 // Input: nums = [1,2,4,8]
 // Output: [1,2,4,8]
 
-var largestDivisibleSubset = function (nums) {
+const largestDivisibleSubset = function (nums) {
   if (nums.length === 0) {
     return [];
   }
@@ -52,8 +52,5 @@ var largestDivisibleSubset = function (nums) {
   return result;
 };
 
-const nums1 = [1, 2, 3];
-console.log(largestDivisibleSubset(nums1));
-
-const nums2 = [1, 2, 4, 8];
-console.log(largestDivisibleSubset(nums2));
+console.log(largestDivisibleSubset([1, 2, 3]));
+console.log(largestDivisibleSubset([1, 2, 4, 8]));
