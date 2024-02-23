@@ -3,7 +3,9 @@
 // record(order_id): adds the order_id to the log
 // get_last(i): gets the ith last element from the log. i is guaranteed to be smaller than or equal to N.
 // You should be as efficient with time and space as possible.
-var OrderLog = /** @class */ (function () {
+
+
+let OrderLog = /** @class */ (function () {
     function OrderLog(N) {
         this.currentPos = 0;
         this.size = 0;
@@ -23,14 +25,14 @@ var OrderLog = /** @class */ (function () {
     return OrderLog;
 }());
 // Example usage:
-var log = new OrderLog(5);
+let log = new OrderLog(5);
 log.record("Order1");
 log.record("Order2");
 log.record("Order3");
 log.record("Order4");
 log.record("Order5");
-console.log(log.get_last(1)); // Output: Order5
-console.log(log.get_last(2)); // Output: Order4
+console.log(log.get_last(1));
+console.log(log.get_last(2));
 log.record("Order6");
-console.log(log.get_last(1)); // Output: Order6
-console.log(log.get_last(6)); // Output: null (or error, based on implementation choice)
+console.log(log.get_last(1));
+console.log(log.get_last(6));
