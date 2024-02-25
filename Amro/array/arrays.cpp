@@ -28,3 +28,22 @@ int main() {
   return 0;
 }
 
+
+
+// 3. Calculate the Average
+
+#include <iostream>
+using namespace std;
+
+int main() {
+  double array[4] = {2.5, 3.5, 4.5, 5.5};
+  double sum = 0;
+  for (int i = 0; i < 4; i++) {
+    sum += array[i];    // Add each element to sum
+    cout << sum << " "; // the sum of the array wil be 16
+  }
+  double average = sum / 4; // Divide sum by the number of elements
+  cout << "Average = " << average;
+  return 0;
+}
+
