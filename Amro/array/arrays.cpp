@@ -47,3 +47,30 @@ int main() {
   return 0;
 }
 
+// 4. Reverse an Array
+
+#include <iostream>
+using namespace std;
+
+void reverseArray(int arr[], int n) {
+  for (int i = 0; i < n / 2; i++) {
+    swap(arr[i], arr[n - i - 1]);
+  }
+}
+
+int main() {
+  int array[5] = {1, 2, 3, 4, 5};
+  cout << "Original array: ";
+  for (int i = 0; i < 5; i++) {
+    cout << array[i] << " ";
+  }
+  cout << endl;
+
+  reverseArray(array, 5);
+
+  cout << "Reversed array: ";
+  for (int i = 0; i < 5; i++) {
+    cout << array[i] << " ";
+  }
+  return 0;
+}
