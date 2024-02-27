@@ -25,33 +25,35 @@
 // The name of a file contains at least a period and an extension.
 // The name of a directory or sub-directory will not contain a period.
 
-
 function lengthLongestPath(input: string): number {
-  const lines = input.split('\n');
+  const lines = input.split("\n");
   let maxLen = 0;
-  const stack: number[] = [0];
+  const stack: number[] = [0]; // Stack to track path length at each depth
 
   for (const line of lines) {
-      const depth = line.lastIndexOf('\t') + 1;
-      const len = line.length - depth;
+    const depth = line.lastIndexOf("\t") + 1;
+    const len = line.length - depth;
 
-      if (line.includes('.')) {
-          maxLen = Math.max(maxLen, stack[depth] + len);
+    if (line.includes(".")) {
+      // It's a file
+      maxLen = Math.max(maxLen, stack[depth] + len);
+    } else {
+      // It's a directory
+      if (depth + 1 < stack.length) {
+        stack[depth + 1] = stack[depth] + len + 1; // Update path length including '/'
       } else {
-          if (depth + 1 < stack.length) {
-              stack[depth + 1] = stack[depth] + len + 1;
-          } else {
-              stack.push(stack[depth] + len + 1);
-          }
+        stack.push(stack[depth] + len + 1); // Add new depth
       }
+    }
   }
 
   return maxLen;
 }
 
+// Example Usage
 const input1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
-const input2 = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+console.log(lengthLongestPath(input1)); // Outputs the length of the longest path
 
-console.log(lengthLongestPath(input1));
-console.log(lengthLongestPath(input2));
-
+const input2 =
+  "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
+console.log(lengthLongestPath(input2)); // Outputs the length of the longest path
