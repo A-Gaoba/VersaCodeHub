@@ -25,6 +25,7 @@
 // The name of a file contains at least a period and an extension.
 // The name of a directory or sub-directory will not contain a period.
 
+// Solving problem
 function lengthLongestPath(input: string): number {
   const lines = input.split("\n");
   let maxLen = 0;
