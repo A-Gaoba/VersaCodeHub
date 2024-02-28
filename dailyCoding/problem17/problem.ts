@@ -53,7 +53,7 @@ function lengthLongestPath(input: string): number {
 
 // Example Usage
 const input1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
-console.log(lengthLongestPath(input1)); // Outputs the length of the longest path
+console.log(lengthLongestPath(input1)); h
 
 const input2 =
   "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
