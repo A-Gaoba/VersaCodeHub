@@ -20,6 +20,7 @@
 // Note:
 // The name of a file contains at least a period and an extension.
 // The name of a directory or sub-directory will not contain a period.
+
 function lengthLongestPath(input) {
     var lines = input.split("\n");
     var maxLen = 0;
@@ -46,6 +47,6 @@ function lengthLongestPath(input) {
 }
 // Example Usage
 var input1 = "dir\n\tsubdir1\n\tsubdir2\n\t\tfile.ext";
-console.log(lengthLongestPath(input1)); // Outputs the length of the longest path
+console.log(lengthLongestPath(input1));
 var input2 = "dir\n\tsubdir1\n\t\tfile1.ext\n\t\tsubsubdir1\n\tsubdir2\n\t\tsubsubdir2\n\t\t\tfile2.ext";
-console.log(lengthLongestPath(input2)); // Outputs the length of the longest path
+console.log(lengthLongestPath(input2)); 
