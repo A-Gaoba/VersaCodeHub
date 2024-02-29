@@ -10,40 +10,34 @@
 // Do this in O(n) time and O(k) space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
 
 function printMaxOfSubarrays(arr: number[], k: number): void {
-  let deque: number[] = []; // Initialize the deque to hold indexes
+  let deque: number[] = []; // Holds indexes of useful elements
 
-  // Process the first k elements (the first window)
+  // Initial window
   for (let i = 0; i < k; ++i) {
-    // Remove elements that are not useful
-    while (deque.length > 0 && arr[i] >= arr[deque[deque.length - 1]]) {
+    while (deque.length > 0 && arr[i] >= arr[deque.at(-1)]) {
       deque.pop();
     }
-    // Add new element's index
     deque.push(i);
   }
 
-  // Process the rest of the array
+  // Remaining windows
   for (let i = k; i < arr.length; ++i) {
-    // The element at the front of the deque is the maximum of the previous window
-    console.log(arr[deque[0]]);
+    console.log(arr[deque[0]]); // Maximum of the previous window
 
-    // Remove the elements which are out of this window
+    // Remove indexes out of the current window
     while (deque.length > 0 && deque[0] <= i - k) {
       deque.shift();
     }
 
-    // Remove all elements smaller than the currently
-    // being added element (remove useless elements)
-    while (deque.length > 0 && arr[i] >= arr[deque[deque.length - 1]]) {
+    // Remove smaller elements
+    while (deque.length > 0 && arr[i] >= arr[deque.at(-1)]) {
       deque.pop();
     }
 
-    // Add current element at the back of deque
     deque.push(i);
   }
 
-  // Print the maximum element of the last window
-  console.log(arr[deque[0]]);
+  console.log(arr[deque[0]]); // Maximum of the last window
 }
 
 // Example usage
