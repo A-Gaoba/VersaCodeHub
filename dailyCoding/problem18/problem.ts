@@ -10,9 +10,8 @@
 // Do this in O(n) time and O(k) space. You can modify the input array in-place and you do not need to store the results. You can simply print them out as you compute them.
 
 function printMaxOfSubarrays(arr: number[], k: number): void {
-  let deque: number[] = []; // Holds indexes of useful elements
+  let deque: number[] = []; 
 
-  // Initial window
   for (let i = 0; i < k; ++i) {
     while (deque.length > 0 && arr[i] >= arr[deque.at(-1)]) {
       deque.pop();
@@ -20,16 +19,15 @@ function printMaxOfSubarrays(arr: number[], k: number): void {
     deque.push(i);
   }
 
-  // Remaining windows
   for (let i = k; i < arr.length; ++i) {
-    console.log(arr[deque[0]]); // Maximum of the previous window
+    console.log(arr[deque[0]]); 
 
-    // Remove indexes out of the current window
+    
     while (deque.length > 0 && deque[0] <= i - k) {
       deque.shift();
     }
 
-    // Remove smaller elements
+  
     while (deque.length > 0 && arr[i] >= arr[deque.at(-1)]) {
       deque.pop();
     }
@@ -37,7 +35,7 @@ function printMaxOfSubarrays(arr: number[], k: number): void {
     deque.push(i);
   }
 
-  console.log(arr[deque[0]]); // Maximum of the last window
+  console.log(arr[deque[0]]); 
 }
 
 // Example usage
