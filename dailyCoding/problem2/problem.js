@@ -18,5 +18,5 @@ function productAllElemArrExceptSelf(nums) {
     }
     return result;
 }
-console.log(productAllElemArrExceptSelf([1, 2, 3, 4, 5])); // output would be [120, 60, 40, 30, 24]
-console.log(productAllElemArrExceptSelf([3, 2, 1])); // output would be [2, 3, 6]
+console.log(productAllElemArrExceptSelf([1, 2, 3, 4, 5])); 
+console.log(productAllElemArrExceptSelf([3, 2, 1]));
