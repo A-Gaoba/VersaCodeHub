@@ -15,4 +15,4 @@ function productArrayAdvanced(nums) {
     return product / num;
   });
 }
-console.log(productArrayAdvanced([1, 2, 3, 4, 5])); // يطبع [120, 60, 40, 30, 24]
+console.log(productArrayAdvanced([1, 2, 3, 4, 5]));
