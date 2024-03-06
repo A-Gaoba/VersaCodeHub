@@ -1,18 +1,19 @@
-function productArrayAdvanced(nums) {
+function productArrayEfficient(nums) {
   let product = 1;
   let zeroCount = 0;
-  for (let num of nums) {
-    if (num === 0) {
-      zeroCount++;
-      continue;
-    }
-    product *= num;
-  }
-
-  return nums.map(num => {
-    if (zeroCount > 1) return 0;
-    if (zeroCount === 1) return num === 0 ? product : 0;
-    return product / num;
+  nums.forEach((num) => {
+    if (num !== 0) product *= num;
+    else zeroCount++;
   });
+
+  return nums.map((num) =>
+    zeroCount > 1
+      ? 0
+      : zeroCount === 1
+      ? num === 0
+        ? product
+        : 0
+      : product / num
+  );
 }
-console.log(productArrayAdvanced([1, 2, 3, 4, 5]));
+console.log(productArrayEfficient([1, 2, 3, 4, 5]));
