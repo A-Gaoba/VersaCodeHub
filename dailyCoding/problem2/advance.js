@@ -15,4 +15,5 @@ function productArrayEfficient(nums) {
         : 0
       : product / num
   );
-(productArrayEfficient([1, 2, 3, 4, 5]));
+}
+console.log(productArrayEfficient([1, 2, 3, 4, 5]));
