@@ -17,4 +17,4 @@ function productArrayOptimized(nums) {
   
   return product;
 }
-(productArrayOptimized([1, 2, 3, 4, 5]));
+console.log(productArrayOptimized([1, 2, 3, 4, 5]));
