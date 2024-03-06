@@ -1,5 +1,6 @@
 function productArray(nums) {
   let result = [];
+
   for (let i = 0; i < nums.length; i++) {
     let product = 1;
     for (let j = 0; j < nums.length; j++) {
@@ -11,4 +12,4 @@ function productArray(nums) {
   }
   return result;
 }
-console.log(productArray([1, 2, 3, 4, 5])); 
+console.log(productArray([1, 2, 3, 4, 5]));
