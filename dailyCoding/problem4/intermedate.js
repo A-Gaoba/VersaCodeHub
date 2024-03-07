@@ -1,5 +1,5 @@
 function findFirstMissingPositive(nums) {
-  nums = nums.filter(n => n >= 1);
+  nums = nums.filter((n) => n >= 1);
   let set = new Set(nums);
   let i = 1;
   while (set.has(i)) {
