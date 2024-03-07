@@ -1,4 +1,4 @@
-function findMissingNumber(nums) {
+function findFirstMissingPositive(nums) {
   let current = 1;
   nums.sort((a, b) => a - b);
   nums.forEach((num) => {
@@ -8,5 +8,4 @@ function findMissingNumber(nums) {
   });
   return current;
 }
-
-console.log(findMissingNumber([3, 4, -1, 1]));
+console.log(findFirstMissingPositive([3, 4, -1, 1]));
