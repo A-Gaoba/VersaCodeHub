@@ -1,19 +1,19 @@
-function findFirstMissing(nums) {
-  for (let i = 0; i < nums.length; i++) {
-    while (
+function locateFirstMissing(nums) {
+  let i = 0;
+  while (i < nums.length) {
+    if (
       nums[i] > 0 &&
       nums[i] <= nums.length &&
       nums[nums[i] - 1] !== nums[i]
     ) {
-      let correctPos = nums[i] - 1;
-      [nums[i], nums[correctPos]] = [nums[correctPos], nums[i]];
+      [nums[nums[i] - 1], nums[i]] = [nums[i], nums[nums[i] - 1]];
+    } else {
+      i++;
     }
   }
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== i + 1) {
-      return i + 1;
-    }
+  for (i = 0; i < nums.length; i++) {
+    if (nums[i] !== i + 1) return i + 1;
   }
   return nums.length + 1;
 }
-console.log(findFirstMissing([3, 4, -1, 1]));
+console.log(locateFirstMissing([3, 4, -1, 1]));
