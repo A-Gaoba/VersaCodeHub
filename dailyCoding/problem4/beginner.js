@@ -1,10 +1,10 @@
-function findSmallestMissing(nums) {
-  let smallest = 1;
-  while (true) {
-    if (!nums.includes(smallest)) {
-      return smallest;
+function findMissingNumber(nums) {
+  let current = 1;
+  nums.sort((a, b) => a - b);
+  nums.forEach((num) => {
+    if (num === current) {
+      current++;
     }
-    smallest++;
-  }
+  });
+  return current;
 }
-console.log(findSmallestMissing([3, 4, -1, 1]));
