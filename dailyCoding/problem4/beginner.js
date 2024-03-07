@@ -8,3 +8,5 @@ function findMissingNumber(nums) {
   });
   return current;
 }
+
+console.log(findMissingNumber([3, 4, -1, 1]));

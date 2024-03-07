@@ -1,13 +1,10 @@
-function findSmallestMissingSorted(nums) {
-  nums = nums.filter(n => n > 0).sort((a, b) => a - b);
-  let expected = 1;
-  for (let num of nums) {
-    if (num === expected) {
-      expected++;
-    } else if (num > expected) {
-      break;
-    }
+function findFirstMissingPositive(nums) {
+  nums = nums.filter(n => n >= 1);
+  let set = new Set(nums);
+  let i = 1;
+  while (set.has(i)) {
+    i++;
   }
-  return expected;
+  return i;
 }
-console.log(findSmallestMissingSorted([3, 4, -1, 1]));
+console.log(findFirstMissingPositive([3, 4, -1, 1]));
