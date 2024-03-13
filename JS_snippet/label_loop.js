@@ -10,3 +10,13 @@ for (let i = 0; i < 3; i++) {
 }
 
 
+// Labeled Loop
+outerLoop: for (let i = 0; i < 3; i++) {
+  innerLoop: for (let j = 0; j < 4; j++) {
+    if (i === 1 && j === 2) {
+      console.log("Labeled Loop: Breaking at i =", i, "and j =", j);
+      break outerLoop;
+    }
+    console.log("Labeled Loop: i =", i, "j =", j);
+  }
+}
