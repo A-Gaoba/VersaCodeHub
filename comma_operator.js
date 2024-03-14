@@ -7,7 +7,6 @@
 //   }
 // }
 
-// console.log("=================");
 
 // With Comma Operator
 for (let i = 0, j = 0, k = 0; i < 5 && j < 3 && k < 4; i++, j++, k++) {
