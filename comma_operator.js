@@ -1,11 +1,11 @@
-// // Without Comma Operator
-// for (let i = 0; i < 5; i++) {
-//   for (let j = 0; j < 3; j++) {
-//     for (let k = 0; k < 4; k++) {
-//       console.log("Without Comma Operator: i =", i, ", j =", j, ", k =", k);
-//     }
-//   }
-// }
+// Without Comma Operator
+for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 3; j++) {
+    for (let k = 0; k < 4; k++) {
+      console.log("Without Comma Operator: i =", i, ", j =", j, ", k =", k);
+    }
+  }
+}
 
 
 // With Comma Operator
