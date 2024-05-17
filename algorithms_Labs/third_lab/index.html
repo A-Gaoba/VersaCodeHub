@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tree Traversals</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Tree Traversals</h1>
+      <div class="button-container">
+        <button onclick="traverseTree('inOrder')">(LNF)</button>
+        <button onclick="traverseTree('postOrder')">(LRN)</button>
+        <button onclick="traverseTree('preOrder')">(NLR)</button>
+        <button onclick="traverseTree('reversePreOrder')">(NRL)</button>
+        <button onclick="traverseTree('reverseInOrder')">(RNL)</button>
+        <button onclick="traverseTree('reversePostOrder')">(RLN)</button>
+      </div>
+      <canvas id="treeCanvas" width="1000" height="600"></canvas>
+      <div id="result"></div>
+    </div>
+    <script src="scripts.js"></script>
+  </body>
+</html>

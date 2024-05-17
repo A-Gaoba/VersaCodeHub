@@ -5,7 +5,7 @@
 // метод устранения коллизий – метод цепочек.
 
 const m = 48;
-const t = m / 2;
+const t = m / 2; 
 let ht = Array.from({ length: t }, () => []);
 let a = [];
 
@@ -82,7 +82,11 @@ function printHashTable() {
     let sum = sumOfDigits(a[i]);
     output += `${a[i]}(sum: ${sum}),`;
   }
-
+  output += "\n____________________________\n\nGenerated hash addresses sequence:\n";
+  for (let i = 0; i < a.length; i++) {
+    let h_function = hashFunction(a[i]);
+    output += h_function + ((i + 1) % 9 === 0 ? "\n" : " ");
+  }
   output += "\n\nHash Table:\n";
   for (let i = 0; i < ht.length; i++) {
     output += `${i}: ${ht[i].join(" ")}\n`;
