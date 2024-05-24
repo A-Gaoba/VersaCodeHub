@@ -1,11 +1,11 @@
-// . Сгенерировать 48 пятизначных неповторяющихся чисел (элементов).
+// Сгенерировать 48 пятизначных неповторяющихся чисел (элементов).
 // Вывести их на экран.
 // Построить хеш-таблицу, используя:
 // хеш-функцию – сумма всех цифр элемента,
 // метод устранения коллизий – метод цепочек.
 
 const m = 48;
-const t = m / 2; 
+const t = m / 2;
 let ht = Array.from({ length: t }, () => []);
 let a = [];
 
@@ -82,7 +82,8 @@ function printHashTable() {
     let sum = sumOfDigits(a[i]);
     output += `${a[i]}(sum: ${sum}),`;
   }
-  output += "\n____________________________\n\nGenerated hash addresses sequence:\n";
+  output +=
+    "\n____________________________\n\nGenerated hash addresses sequence:\n";
   for (let i = 0; i < a.length; i++) {
     let h_function = hashFunction(a[i]);
     output += h_function + ((i + 1) % 9 === 0 ? "\n" : " ");
@@ -92,6 +93,8 @@ function printHashTable() {
     output += `${i}: ${ht[i].join(" ")}\n`;
   }
   let filled = ht.filter((bucket) => bucket.length > 0).length;
+  console.log("bucket");
+
   let load_factor = filled / ht.length;
   output += `\nNumber of filled cells: ${filled}\n`;
   output += `Load factor = ${load_factor}\n`;

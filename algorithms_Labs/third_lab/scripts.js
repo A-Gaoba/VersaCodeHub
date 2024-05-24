@@ -5,7 +5,7 @@ class TreeNode {
     this.right = right;
   }
 }
-
+// function creates a binary tree with 20 nodes.
 function createSampleTree() {
   const nodes = [];
   for (let i = 1; i <= 20; i++) {
@@ -44,9 +44,11 @@ function clearCanvas() {
   ctx.font = "15px Arial";
 }
 
+// function recursively draws the binary tree on the canvas.
 function drawTree(node, x, y, angle, depth, branchLength) {
   if (!node) return;
 
+  // Calculate the new position (newX, newY) for the child node.
   const dx = branchLength * Math.cos(angle);
   const dy = branchLength * Math.sin(angle);
 
@@ -77,7 +79,7 @@ function drawTree(node, x, y, angle, depth, branchLength) {
     newY,
     angle - Math.PI / 6,
     depth + 1,
-    branchLength * 0.7
+    branchLength * 0.8
   );
   drawTree(
     node.right,
@@ -85,13 +87,15 @@ function drawTree(node, x, y, angle, depth, branchLength) {
     newY,
     angle + Math.PI / 6,
     depth + 1,
-    branchLength * 0.7
+    branchLength * 0.8
   );
 }
 
+// function performs different types of tree traversals and displays the result.
 function traverseTree(traversalType) {
   const result = [];
 
+  // Left, Node, Right
   function inOrderTraversal(node) {
     if (node) {
       inOrderTraversal(node.left);
@@ -100,6 +104,7 @@ function traverseTree(traversalType) {
     }
   }
 
+  // Left, Right, Node.
   function postOrderTraversal(node) {
     if (node) {
       postOrderTraversal(node.left);
@@ -108,6 +113,7 @@ function traverseTree(traversalType) {
     }
   }
 
+  // Node, Left, Right.
   function preOrderTraversal(node) {
     if (node) {
       result.push(node.value);
@@ -116,6 +122,7 @@ function traverseTree(traversalType) {
     }
   }
 
+  // Node, Right, Left.
   function reversePreOrderTraversal(node) {
     if (node) {
       result.push(node.value);
@@ -124,6 +131,7 @@ function traverseTree(traversalType) {
     }
   }
 
+  // Right, Node, Left.
   function reverseInOrderTraversal(node) {
     if (node) {
       reverseInOrderTraversal(node.right);
@@ -132,6 +140,7 @@ function traverseTree(traversalType) {
     }
   }
 
+  // Right, Left, Node.
   function reversePostOrderTraversal(node) {
     if (node) {
       reversePostOrderTraversal(node.right);

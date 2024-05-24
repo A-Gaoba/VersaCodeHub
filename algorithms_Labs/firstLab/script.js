@@ -30,6 +30,7 @@ function printHashTable() {
   for (let i = 0; i < ht.length; i++) {
     output += `${i}: ${ht[i].join(" ")}\n`;
   }
+  //number of non-empty buckets.
   let filled = ht.filter((bucket) => bucket.length > 0).length;
   let load_factor = filled / ht.length;
   output += `\nNumber of filled cells: ${filled}\n`;
@@ -39,6 +40,7 @@ function printHashTable() {
     0
   );
 
+  // 1+2+3....+n => n(n-1)/2
   let averageSteps = filled ? totalSteps / filled : 0;
   output += `Total number of steps in the hash table = ${totalSteps}\n`;
   output += `Average number of steps needed to place an element: ${averageSteps}\n`;

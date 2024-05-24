@@ -1,0 +1,81 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container Styles */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 800px;
+  text-align: center;
+}
+
+/* Controls Styles */
+.controls {
+  margin-bottom: 20px;
+}
+
+.controls input {
+  margin: 5px;
+}
+
+/* Attractive Button Styles */
+.controls button,
+.traversals button {
+  margin: 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Primary color */
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.controls button:hover,
+.traversals button:hover {
+  background-color: #0056b3; /* Darker shade of primary color */
+  transform: scale(1.05);
+}
+
+.controls button:active,
+.traversals button:active {
+  background-color: #004494; /* Even darker shade for active state */
+}
+
+/* Tree Display Styles */
+#tree {
+  margin-bottom: 20px;
+  min-height: 600px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Node Styles */
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+/* Link Styles */
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}

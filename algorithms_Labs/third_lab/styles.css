@@ -64,7 +64,6 @@ canvas {
   color: #333;
 }
 
-/* Media Queries for Responsiveness */
 
 @media (max-width: 768px) {
   .button-container {

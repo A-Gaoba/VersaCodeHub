@@ -62,7 +62,7 @@ button:hover {
   }
 
   h1 {
-    font-size: 1.5rem; /* Slightly smaller font size for smaller screens */
+    font-size: 1.5rem; 
   }
 
   .output {
@@ -70,15 +70,15 @@ button:hover {
   }
 
   button {
-    font-size: 0.875rem; /* Equivalent to 14px */
-    padding: 0.5rem 1rem; /* Equivalent to 8px 16px */
-    flex: 1 1 150px; /* Adjust flex-basis for smaller screens */
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem; 
+    flex: 1 1 150px;
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.25rem; /* Even smaller font size for very small screens */
+    font-size: 1.25rem;
   }
 
   .output {
@@ -86,8 +86,8 @@ button:hover {
   }
 
   button {
-    font-size: 0.75rem; /* Equivalent to 12px */
-    padding: 0.5rem 0.75rem; /* Equivalent to 8px 12px */
-    flex: 1 1 100px; /* Adjust flex-basis for very small screens */
+    font-size: 0.75rem; 
+    padding: 0.5rem 0.75rem; 
+    flex: 1 1 100px; 
   }
 }

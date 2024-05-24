@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  margin-bottom: 1.25rem; /* Equivalent to 20px */
+  margin-bottom: 1.25rem; 
   color: #4682b4;
   text-align: center;
   padding: 0 1rem;
@@ -29,14 +29,14 @@ button {
   background-color: #4682b4;
   color: white;
   border: none;
-  padding: 0.625rem 1.25rem; /* Equivalent to 10px 20px */
-  margin: 0.625rem; /* Equivalent to 10px */
-  font-size: 1rem; /* Equivalent to 16px */
+  padding: 0.625rem 1.25rem; 
+  margin: 0.625rem; 
+  font-size: 1rem; 
   cursor: pointer;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  flex: 1 1 200px; /* Flex-grow, flex-shrink, flex-basis */
-  max-width: 220px; /* Ensures buttons don't get too large */
+  flex: 1 1 200px; 
+  max-width: 220px; 
 }
 
 button:hover {
@@ -46,8 +46,8 @@ button:hover {
 .output {
   background-color: #ffffff;
   border: 1px solid #ddd;
-  padding: 1.25rem; /* Equivalent to 20px */
-  margin-top: 1.25rem; /* Equivalent to 20px */
+  padding: 1.25rem; 
+  margin-top: 1.25rem; 
   width: 80%;
   max-width: 600px;
   border-radius: 10px;
@@ -62,7 +62,7 @@ button:hover {
   }
 
   h1 {
-    font-size: 1.5rem; /* Slightly smaller font size for smaller screens */
+    font-size: 1.5rem;
   }
 
   .output {
@@ -70,15 +70,15 @@ button:hover {
   }
 
   button {
-    font-size: 0.875rem; /* Equivalent to 14px */
-    padding: 0.5rem 1rem; /* Equivalent to 8px 16px */
-    flex: 1 1 150px; /* Adjust flex-basis for smaller screens */
+    font-size: 0.875rem; 
+    padding: 0.5rem 1rem; 
+    flex: 1 1 150px; 
   }
 }
 
 @media (max-width: 480px) {
   h1 {
-    font-size: 1.25rem; /* Even smaller font size for very small screens */
+    font-size: 1.25rem; 
   }
 
   .output {
@@ -86,8 +86,8 @@ button:hover {
   }
 
   button {
-    font-size: 0.75rem; /* Equivalent to 12px */
-    padding: 0.5rem 0.75rem; /* Equivalent to 8px 12px */
-    flex: 1 1 100px; /* Adjust flex-basis for very small screens */
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem; 
+    flex: 1 1 100px; 
   }
 }
