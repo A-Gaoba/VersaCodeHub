@@ -12,6 +12,10 @@ class BinarySearchTree {
   }
 
   insert(data) {
+    if (this.search(data)) {
+      alert(`Node with value ${data} already exists.`);
+      return;
+    }
     const newNode = new Node(data);
     if (this.root === null) {
       this.root = newNode;
@@ -115,6 +119,22 @@ class BinarySearchTree {
     }
   }
 
+  search(data) {
+    return this.searchNode(this.root, data);
+  }
+
+  searchNode(node, data) {
+    if (node === null) {
+      return null;
+    } else if (data < node.data) {
+      return this.searchNode(node.left, data);
+    } else if (data > node.data) {
+      return this.searchNode(node.right, data);
+    } else {
+      return node;
+    }
+  }
+
   display() {
     const treeElement = document.getElementById("tree");
     treeElement.innerHTML = "";
@@ -153,7 +173,7 @@ class BinarySearchTree {
         "d",
         d3
           .linkVertical()
-          .x((d) => d.x - width / 2) // Adjusting for centering
+          .x((d) => d.x - width / 2)
           .y((d) => d.y)
       );
 
@@ -163,7 +183,7 @@ class BinarySearchTree {
       .enter()
       .append("g")
       .attr("class", "node")
-      .attr("transform", (d) => `translate(${d.x - width / 2},${d.y})`); // Adjusting for centering
+      .attr("transform", (d) => `translate(${d.x - width / 2},${d.y})`);
 
     node.append("circle").attr("r", 10);
 
@@ -219,6 +239,36 @@ function postorderTraversal() {
   bst.output = [];
   bst.postorder(bst.getRootNode());
   displayOutput();
+}
+
+function searchNode() {
+  const value = document.getElementById("nodeValue").value;
+  const searchResultElement = document.getElementById("searchResult");
+  if (value) {
+    const result = bst.search(parseInt(value));
+    if (result) {
+      let path = "";
+      let currentNode = bst.getRootNode();
+      let depth = 0;
+
+      while (currentNode && currentNode.data !== parseInt(value)) {
+        depth++;
+        if (parseInt(value) < currentNode.data) {
+          path += "left -> ";
+          currentNode = currentNode.left;
+        } else {
+          path += "right -> ";
+          currentNode = currentNode.right;
+        }
+      }
+
+      path += "found";
+      searchResultElement.innerHTML = `Node found: ${result.data}<br>Path: ${path}<br>Depth: ${depth}`;
+    } else {
+      searchResultElement.innerHTML = "Node not found";
+    }
+    document.getElementById("nodeValue").value = "";
+  }
 }
 
 function displayOutput() {
